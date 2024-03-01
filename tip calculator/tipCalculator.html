@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tip Calculator</title>
+		<!-- stylesheet link -->
+		<link rel="stylesheet" type="text/css" href="tipCalculator.css">
+		<!-- font awesome link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		<center>
+			<div id="tipCalDiv">
+				<div id="heading">
+					<h1>TIP CALCULATOR</h1>
+				</div>
+				
+				<table>
+					<tr>
+						<th>Bill Amount:</th>
+						<td><input id="billAmountGiven" placeholder="Enter the bill amount"></td>
+					</tr>
+					
+					<tr>
+						<th>Tip Percentage:</th>
+						<td><input id="tipPercentageGiven" placeholder="Enter the tip"></td>
+					</tr>
+					
+					<tr>
+						<th><button onclick="calculation()">CALCULATE!</button></th>
+						<td><button style="margin-left: 40px;" onclick="clearOutput()">CLEAR!</button></td>
+					</tr>
+					
+					<tr>
+						<th>Tip Amount:</th>
+						<td><span id="tipAmountOutput">$0</span></td>
+					</tr>
+					
+					<tr>
+						<th>Total Amount:</th>
+						<td><span id="totalAmountOutput">0</span></td>
+					</tr>
+				</table>
+			</div>
+		</center>
+		
+		
+		<script>
+			var tipPercentage = 0;
+			var billAmount = 0;
+			var tipPercentageCalculation = 0;
+			var billAmountCalculation = 0;
+			
+			function calculation()
+			{
+				tipPercentage = Number(document.getElementById("tipPercentageGiven").value);
+				billAmount = Number(document.getElementById("billAmountGiven").value);
+				
+				tipPercentageCalculation = billAmount * (tipPercentage/100);
+				billAmountCalculation = billAmount * ((1+(tipPercentage/100)));
+				
+				document.getElementById("tipAmountOutput").innerHTML = "$"+tipPercentageCalculation;
+				document.getElementById("totalAmountOutput").innerHTML = billAmountCalculation;
+			}
+			
+			function clearOutput()
+			{	
+				let tipPercentageClear = document.getElementById("tipPercentageGiven");
+				let billAmountClear = document.getElementById("billAmountGiven");
+				
+				tipPercentageClear.value = "";
+				billAmountClear.value = "";
+				
+				tipPercentageCalculation = 0;
+				billAmountCalculation = 0;
+				
+				document.getElementById("tipAmountOutput").innerHTML = "$"+tipPercentageCalculation;
+				document.getElementById("totalAmountOutput").innerHTML = billAmountCalculation;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:100vh;
+	font-size:25px;
+	color:white;
+}
+#hone{
+	margin-top:30px;
+}
+#fd{
+	margin-top:60px;
+	margin-left:80px;
+	width:1000px;
+	height:100px;
+}
+#computer{
+	width:300px;
+	height:100px;
+	float:left;
+	font-size:25px;
+}
+#user{
+	width:300px;
+	height:100px;
+	float:left;
+	margin-left:400px;
+	font-size:25px;
+}
+#answer{
+	width:1000px;
+	height:200px;
+	margin-left: 100px;
+}
+#result{
+	font-size:50px;
+	text-align: center;
+}
